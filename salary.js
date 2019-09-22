@@ -22,6 +22,9 @@ module.exports = class salaryModule{
         if(this.workHours > this.monthHours()){
            this.rate = this.overtime(); 
         }
-        return this.rate - this.income() - this.ESV();
+        return {
+            name: this.name,
+            rate: this.rate - this.income() - this.ESV()
+        };
     }
-};
+}
